@@ -1,0 +1,109 @@
+<style>
+
+    .row {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .col-100 {
+        width: 100%;
+    }
+
+    .col-30 {
+        flex: 2;
+        border: orange 1px solid;
+    }
+    .col-40 {
+        flex: 3;
+        border: #00ff11 1px solid;
+    }
+
+    .team, .match-info {
+        text-align: center;
+    }
+    .team-logo img {
+        width: 50px;
+    }
+    .team-name-text {
+        font-size: 20px;
+        margin-top: 10px;
+    }
+    .match-info {
+        flex: 1;
+    }
+    .match-date {
+        font-size: 14px;
+        color: #cccccc;
+    }
+    .match-score {
+        font-size: 24px;
+        margin: 20px 0;
+    }
+    .team-stats {
+        margin-top: 20px;
+    }
+    .stats-row {
+        display: flex;
+        justify-content: space-between;
+        padding: 10px 0;
+        border-bottom: 1px solid #333;
+    }
+    .stats-row:last-child {
+        border-bottom: none;
+    }
+    .stats-label {
+        flex: 1;
+        text-align: center;
+    }
+    .stats-value {
+        flex: 1;
+        text-align: center;
+    }
+</style>
+
+<div class="view match-view container">
+    <div class="row">
+        <div class="col-30">
+            <div class="team team1">
+                <div class="team-logo">
+                    <img src="https://via.placeholder.com/100" alt="team-logo">
+                </div>
+                <div class="team-name">
+                    <span class="team-name-text">Germany</span>
+                </div>
+            </div>
+        </div>
+        <div class="col-40">
+            <div class="match-info">
+                <div class="match-date">
+                    <span class="match-date">Freitag, 14.06.2024</span>
+                    <span class="match-datetime">20:45</span>
+                </div>
+                <div class="match-time">
+                    <span class="match-time"></span>
+                </div>
+                <div class="match-score">
+                    <span class="match-location"></span>
+                </div>
+            </div>
+        </div>
+        <div class="col-30">
+            <div class="team team2">
+                <div class="team-logo">
+                    <img src="https://via.placeholder.com/100" alt="team-logo">
+                </div>
+                <div class="team-name">
+                    <span class="team-name-text">Greece</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-100">
+            <div class="match-odds">
+
+            </div>
+        </div>
+    </div>
+</div>
