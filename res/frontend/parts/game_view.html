@@ -1,4 +1,14 @@
 <style>
+    body {
+        display: flex;
+        justify-content: center;
+    }
+
+    .match-view {
+        width: 100%;
+        max-width: 800px;
+        border: black 1px solid;
+    }
 
     .row {
         display: flex;
@@ -9,14 +19,21 @@
     .col-100 {
         width: 100%;
     }
-
     .col-30 {
         flex: 2;
-        border: orange 1px solid;
+        padding: 1rem;
+        border: orange 1px dashed;
     }
     .col-40 {
         flex: 3;
-        border: #00ff11 1px solid;
+        border: #00ff11 1px dashed;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    p {
+        margin: 0;
     }
 
     .team, .match-info {
@@ -43,26 +60,34 @@
     .team-stats {
         margin-top: 20px;
     }
-    .stats-row {
+
+    .bets {
         display: flex;
-        justify-content: space-between;
-        padding: 10px 0;
-        border-bottom: 1px solid #333;
+        justify-content: center;
+        margin-top: 20px;
     }
-    .stats-row:last-child {
-        border-bottom: none;
+
+    .match-time {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 4px 8px ;
+        border-radius: 15px;
+        background: darkred;
+        color: white;
+        width: min-content;
     }
-    .stats-label {
-        flex: 1;
-        text-align: center;
-    }
-    .stats-value {
-        flex: 1;
-        text-align: center;
+    .match-time svg {
+        width: 10px;
+        height: 10px;
+        margin-right: 10px;
     }
 </style>
 
 <div class="view match-view container">
+    <div class="row action-row">
+        <button class="button">Go back</button>
+    </div>
     <div class="row">
         <div class="col-30">
             <div class="team team1">
@@ -72,19 +97,25 @@
                 <div class="team-name">
                     <span class="team-name-text">Germany</span>
                 </div>
+                <div class="team-stats">
+                    <p><span class="stat-time">81'</span> Goal!</p>
+                </div>
             </div>
         </div>
         <div class="col-40">
             <div class="match-info">
                 <div class="match-date">
-                    <span class="match-date">Freitag, 14.06.2024</span>
-                    <span class="match-datetime">20:45</span>
+                    <p class="match-date">Freitag, 14.06.2024, 20:45 Uhr</p>
+                    <p class="match-location">Borussia Park</p>
                 </div>
                 <div class="match-time">
-                    <span class="match-time"></span>
+                    <svg class="live-icon" viewBox="0 0 50 50">
+                        <circle cx="25" cy="25" r="25" fill="white" />
+                    </svg>
+                    <span class="match-is-running">Live</span>
                 </div>
                 <div class="match-score">
-                    <span class="match-location"></span>
+                    2:1
                 </div>
             </div>
         </div>
@@ -101,8 +132,8 @@
     </div>
     <div class="row">
         <div class="col-100">
-            <div class="match-odds">
-
+            <div class="bets">
+                <button class="bet-button">1</button>
             </div>
         </div>
     </div>
