@@ -3,7 +3,7 @@ import {Logger} from "./logging";
 
 async function getTranslations() {
     // @ts-ignore
-    const files = await readdir(import.meta.dir+"./../../../config/translations");
+    const files = await readdir(import.meta.dir+"/../../../config/translations");
     let translations = {};
     for (let i = 0; i < files.length; i++) {
         const file = files[i];
