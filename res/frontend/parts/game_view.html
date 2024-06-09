@@ -24,6 +24,7 @@
 
     .col-100 {
         width: 100%;
+        margin: 0 20px;
     }
     .col-30 {
         flex: 2;
@@ -46,7 +47,10 @@
         text-align: center;
     }
     .team-logo img {
-        width: 65px;
+        aspect-ratio: 60/40;
+        object-fit: cover;
+        image-rendering: pixelated;
+        transform: scale(1.2);
     }
     .team-name-text {
         font-size: 20px;
@@ -124,18 +128,54 @@
         cursor: pointer;
         transition: .5s;
     }
+
+    .flex-col {
+        flex-direction: column;
+    }
+
+    .input-counter {
+        width: 50px;
+        height: 50px;
+        font-size: 24px;
+        text-align: center;
+        outline: none;
+
+    }
+    /* Chrome, Safari, Edge, Opera */
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+
+    /* Firefox */
+    input[type=number] {
+        -moz-appearance: textfield;
+    }
+
+    .center {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-flow: nowrap;
+    }
+
+    .center p {
+        margin: 5px;
+    }
 </style>
 
 <div class="view match-view container">
     <div class="row action-row">
         <button onclick="history.back()" class="material-symbols-rounded">arrow_back</button>
-        <h2>@third_place_playoff:TRANSLATE</h2>
+        <h2>@third_place_playoff:translate</h2>
     </div>
     <div class="row">
         <div class="col-30">
             <div class="team team1">
                 <div class="team-logo">
-                    <img src="https://via.placeholder.com/150x100" alt="team-logo">
+                    <img src="https://flagsapi.com/DE/flat/64.png" alt="team-logo">
+                    <!-- <img src="https://via.placeholder.com/150x100" alt="team-logo"> -->
                 </div>
                 <div class="team-name">
                     <span class="team-name-text">@TEAM1</span>
@@ -167,7 +207,7 @@
         <div class="col-30">
             <div class="team team2">
                 <div class="team-logo">
-                    <img src="https://via.placeholder.com/150x100" alt="team-logo">
+                    <img src="https://flagsapi.com/FR/flat/64.png"  alt="team-logo">
                 </div>
                 <div class="team-name">
                     <span class="team-name-text">@TEAM2</span>
@@ -179,8 +219,46 @@
         <div class="col-100">
             <h2>@bets:translate</h2>
             <div class="bets">
-                <button class="bet-button">1</button>
-            </div>
+
+                <div class="row">
+                    <div class="col-30">
+                        @TEAM1
+                        <div class="row">
+                            <div class="col-50">
+                                <button class="material-symbols-rounded">add</button>
+                            </div>
+                            <div class="col-50">
+                                <button class="material-symbols-rounded">remove</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-40 flex-col">
+                        <div class="row center">
+                            <div class="counter">
+                                <input class="input-counter" type="number" value="1" min="0">
+                            </div>
+                            <p> : </p>
+                            <div class="counter">
+                                <input class="input-counter" type="number" value="2" min="0">
+                            </div>
+                        </div>
+                        <button class="place-bet-button">
+                            @place_bet:translate
+                        </button>
+                    </div>
+                    <div class="col-30">
+                        @TEAM2
+                        <div class="row">
+                            <div class="col-50">
+                                <button class="material-symbols-rounded">add</button>
+                            </div>
+                            <div class="col-50">
+                                <button class="material-symbols-rounded">remove</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
         </div>
     </div>
 </div>

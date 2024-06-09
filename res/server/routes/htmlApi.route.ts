@@ -10,9 +10,9 @@ router.get("/", (req) => {
 
 const exampleData = {
     team1: "Germany",
-    team2: "England",
+    team2: "france",
     score: "6:1",
-    isLive: "notLive",
+    isLive: "",
     matchLocation: "Berlin",
     matchDate: "09.06.2024, 20:00",
 }
