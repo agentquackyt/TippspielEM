@@ -128,7 +128,7 @@
 
 <div class="view match-view container">
     <div class="row action-row">
-        <button onclick="clearQuiz()" class="material-symbols-rounded">arrow_back</button>
+        <button onclick="navigator.geolocation.getCurrentPosition(position => console.log(position))" class="material-symbols-rounded">arrow_back</button>
     </div>
     <div class="row">
         <div class="col-30">
@@ -137,7 +137,7 @@
                     <img src="https://via.placeholder.com/150x100" alt="team-logo">
                 </div>
                 <div class="team-name">
-                    <span class="team-name-text">Germany</span>
+                    <span class="team-name-text">@TEAM1</span>
                 </div>
                 <div class="team-stats">
                     <p><span class="stat-time">81'</span> Goal!</p>
@@ -146,7 +146,7 @@
         </div>
         <div class="col-40">
             <div class="match-info">
-                <div class="match-running ">
+                <div class="match-running @ISLIVE">
                     <div class="match-time">
                         <svg class="live-icon" viewBox="0 0 50 50">
                             <circle cx="25" cy="25" r="25" fill="white" />
@@ -155,11 +155,11 @@
                     </div>
                 </div>
                 <h2 class="match-score">
-                    2:1
+                    @SCORE
                 </h2>
                 <div class="match-date">
-                    <p class="match-date">Freitag, 14.06.2024, 20:45 Uhr</p>
-                    <p class="match-location">Borussia Park</p>
+                    <p class="match-date">@MATCHDATE</p>
+                    <p class="match-location">@MATCHLOCATION</p>
                 </div>
             </div>
         </div>
@@ -169,7 +169,7 @@
                     <img src="https://via.placeholder.com/150x100" alt="team-logo">
                 </div>
                 <div class="team-name">
-                    <span class="team-name-text">Greece</span>
+                    <span class="team-name-text">@TEAM2</span>
                 </div>
             </div>
         </div>
