@@ -1,0 +1,20 @@
+{
+  "group": "Group ",
+  "round_16": "Round of 16",
+  "quarterfinals": "Quarter-finals",
+  "semifinals": "Semi-finals",
+  "final": "Final",
+  "third_place_playoff": "Third place play-off",
+
+  "goal": "Goal",
+  "yellowcard": "Yellow card",
+  "redcard": "Red card",
+  "substitution": "Substitution",
+  "penalty": "Penalty",
+
+  "goalkeeper": "Goalkeeper",
+  "defender": "Defender",
+  "midfielder": "Midfielder",
+  "forward": "Forward"
+
+}
