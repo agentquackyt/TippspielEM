@@ -19,4 +19,17 @@ router.get("/css/:id", async (req: Request, params) => {
     }
 });
 
+router.get("/js/:id", async (req: Request, params) => {
+    const {id} = params;
+    if (await Bun.file(`./res/frontend/js/${id}`).exists() === false) {
+        return new Response("404", {status: 404});
+    } else {
+        return new Response(await Bun.file(`./res/frontend/js/${id}`).text(), {
+            headers: {
+                "Content-Type": "text/javascript",
+            },
+        });
+    }
+});
+
 export const static_route = router;

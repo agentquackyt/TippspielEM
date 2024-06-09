@@ -1,5 +1,5 @@
 import {Router} from "../misc/route";
-import {HTMLTemplateEngine} from "../misc/htmlViewEngine";
+import {getLanguages, HTMLTemplateEngine} from "../misc/htmlViewEngine";
 import {translations} from "../misc/translations";
 
 const router = new Router("/api/html");
@@ -20,11 +20,12 @@ const exampleData = {
 
 router.get("/football/game/:id", async (req, params) => {
     const {id} = params;
-    let lang = "de-de";
+    let lang = "en";
 
     if(req.headers.has("Accept-Language")) {
         const languages = getLanguages(req);
         lang = languages[0];
+        console.log(languages);
     }
     let translationsData = (await translations)[lang];
 
@@ -50,15 +51,6 @@ router.get("/football/game/:id", async (req, params) => {
 });
 
 
-function getLanguages(req: Request): string[] {
-    const lang = req.headers.get("Accept-Language");
-    const langParts = lang.split(",");
-    for (let i = 0; i < langParts.length; i++) {
-        const langPart = langParts[i];
-        const lang = langParts[0];
-        langParts[i] = langPart.split(";")[0];
-    }
-    return langParts;
-}
+
 
 export const html_api_router = router;

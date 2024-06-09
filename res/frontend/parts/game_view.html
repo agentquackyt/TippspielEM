@@ -1,6 +1,8 @@
 <head>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0">
     <link rel="stylesheet" href="/static/css/theme.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
 </head>
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
@@ -22,24 +24,29 @@
     .row {
         display: flex;
         flex-direction: row;
-        flex-wrap: wrap;
+        flex-wrap: nowrap;
     }
 
     .col-100 {
-        width: 100%;
+        flex: 1;
         margin: 0 20px;
+        flex-direction: row;
+
     }
+
+
     .col-30 {
         flex: 2;
         padding: 1rem;
-        border: orange 1px dashed;
+        /* border: orange 1px dashed; */
     }
     .col-40 {
         flex: 3;
-        border: #00ff11 1px dashed;
+        /* border: #00ff11 1px dashed; */
         display: flex;
         align-items: center;
         justify-content: center;
+        height: fit-content;
     }
 
     p {
@@ -76,7 +83,8 @@
 
     .bets {
         display: flex;
-        justify-content: center;
+        flex-wrap: nowrap;
+        align-items: stretch;
         margin-top: 20px;
     }
 
@@ -169,6 +177,14 @@
     .center p {
         margin: 5px;
     }
+    .bets .first {
+        text-align: right;
+    }
+
+    .min-height-50 {
+        min-height: 50vh;
+    }
+
 </style>
 
 <div class="view match-view container">
@@ -176,7 +192,7 @@
         <button onclick="history.back()" class="material-symbols-rounded">arrow_back</button>
         <h2>@third_place_playoff:translate</h2>
     </div>
-    <div class="row">
+    <div class="row min-height-50">
         <div class="col-30">
             <div class="team team1">
                 <div class="team-logo">
@@ -226,17 +242,8 @@
             <h2>@bets:translate</h2>
             <div class="bets">
 
-                <div class="row">
-                    <div class="col-30">
+                    <div class="col-30 first">
                         @TEAM1
-                        <div class="row">
-                            <div class="col-50">
-                                <button class="material-symbols-rounded">add</button>
-                            </div>
-                            <div class="col-50">
-                                <button class="material-symbols-rounded">remove</button>
-                            </div>
-                        </div>
                     </div>
 
                     <div class="col-40 flex-col">
@@ -249,22 +256,13 @@
                                 <input class="input-counter" type="number" value="2" min="0">
                             </div>
                         </div>
-                        <button class="place-bet-button primary">
+                        <button class="place-bet-button primary" style="margin-top: 20px">
                             @place_bet:translate
                         </button>
                     </div>
                     <div class="col-30">
                         @TEAM2
-                        <div class="row">
-                            <div class="col-50">
-                                <button class="material-symbols-rounded">add</button>
-                            </div>
-                            <div class="col-50">
-                                <button class="material-symbols-rounded">remove</button>
-                            </div>
-                        </div>
                     </div>
-                </div>
         </div>
     </div>
 </div>
